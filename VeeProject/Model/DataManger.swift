@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class DataManager{
+    private static  var sharedInstance:DataManager?
+    static func getSharedInstance()->DataManager{
+        if DataManager.sharedInstance == nil {
+            DataManager.sharedInstance = DataManager()
+        }
+        return DataManager.sharedInstance!
+    }
+    private init(){}
+}

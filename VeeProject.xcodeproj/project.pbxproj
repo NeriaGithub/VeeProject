@@ -14,6 +14,7 @@
 		D6CAB06C2501545500A0BBF4 /* VeeProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB06A2501545500A0BBF4 /* VeeProject.xcdatamodeld */; };
 		D6CAB06E2501545700A0BBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB06D2501545700A0BBF4 /* Assets.xcassets */; };
 		D6CAB0712501545700A0BBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB06F2501545700A0BBF4 /* LaunchScreen.storyboard */; };
+		D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB07B250159D800A0BBF4 /* DataManger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D6CAB06D2501545700A0BBF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6CAB0702501545700A0BBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6CAB0722501545700A0BBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6CAB07B250159D800A0BBF4 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,41 @@
 		D6CAB0602501545500A0BBF4 /* VeeProject */ = {
 			isa = PBXGroup;
 			children = (
+				D6CAB07A2501598200A0BBF4 /* Model */,
+				D6CAB0792501597B00A0BBF4 /* View */,
+				D6CAB0782501597600A0BBF4 /* Controller */,
 				D6CAB0612501545500A0BBF4 /* AppDelegate.swift */,
 				D6CAB0632501545500A0BBF4 /* SceneDelegate.swift */,
-				D6CAB0652501545500A0BBF4 /* ViewController.swift */,
-				D6CAB0672501545500A0BBF4 /* Main.storyboard */,
 				D6CAB06D2501545700A0BBF4 /* Assets.xcassets */,
-				D6CAB06F2501545700A0BBF4 /* LaunchScreen.storyboard */,
 				D6CAB0722501545700A0BBF4 /* Info.plist */,
 				D6CAB06A2501545500A0BBF4 /* VeeProject.xcdatamodeld */,
 			);
 			path = VeeProject;
+			sourceTree = "<group>";
+		};
+		D6CAB0782501597600A0BBF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6CAB0652501545500A0BBF4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D6CAB0792501597B00A0BBF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6CAB06F2501545700A0BBF4 /* LaunchScreen.storyboard */,
+				D6CAB0672501545500A0BBF4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6CAB07A2501598200A0BBF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6CAB07B250159D800A0BBF4 /* DataManger.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +171,7 @@
 				D6CAB0662501545500A0BBF4 /* ViewController.swift in Sources */,
 				D6CAB0622501545500A0BBF4 /* AppDelegate.swift in Sources */,
 				D6CAB06C2501545500A0BBF4 /* VeeProject.xcdatamodeld in Sources */,
+				D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */,
 				D6CAB0642501545500A0BBF4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
