@@ -15,6 +15,7 @@
 		D6CAB06E2501545700A0BBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB06D2501545700A0BBF4 /* Assets.xcassets */; };
 		D6CAB0712501545700A0BBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB06F2501545700A0BBF4 /* LaunchScreen.storyboard */; };
 		D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB07B250159D800A0BBF4 /* DataManger.swift */; };
+		D6CAB07E25015D9300A0BBF4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB07D25015D9300A0BBF4 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D6CAB0702501545700A0BBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6CAB0722501545700A0BBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6CAB07B250159D800A0BBF4 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
+		D6CAB07D25015D9300A0BBF4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D6CAB07B250159D800A0BBF4 /* DataManger.swift */,
+				D6CAB07D25015D9300A0BBF4 /* Note.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				D6CAB06C2501545500A0BBF4 /* VeeProject.xcdatamodeld in Sources */,
 				D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */,
 				D6CAB0642501545500A0BBF4 /* SceneDelegate.swift in Sources */,
+				D6CAB07E25015D9300A0BBF4 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
