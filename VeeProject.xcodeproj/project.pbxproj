@@ -9,20 +9,29 @@
 /* Begin PBXBuildFile section */
 		D6CAB0622501545500A0BBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB0612501545500A0BBF4 /* AppDelegate.swift */; };
 		D6CAB0642501545500A0BBF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB0632501545500A0BBF4 /* SceneDelegate.swift */; };
-		D6CAB0662501545500A0BBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB0652501545500A0BBF4 /* ViewController.swift */; };
+		D6CAB0662501545500A0BBF4 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB0652501545500A0BBF4 /* NotesVC.swift */; };
 		D6CAB0692501545500A0BBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB0672501545500A0BBF4 /* Main.storyboard */; };
 		D6CAB06C2501545500A0BBF4 /* VeeProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB06A2501545500A0BBF4 /* VeeProject.xcdatamodeld */; };
 		D6CAB06E2501545700A0BBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB06D2501545700A0BBF4 /* Assets.xcassets */; };
 		D6CAB0712501545700A0BBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CAB06F2501545700A0BBF4 /* LaunchScreen.storyboard */; };
 		D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB07B250159D800A0BBF4 /* DataManger.swift */; };
 		D6CAB07E25015D9300A0BBF4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CAB07D25015D9300A0BBF4 /* Note.swift */; };
+		D6FFE22625020C1A002A544D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE22525020C1A002A544D /* Constants.swift */; };
+		D6FFE22825020ECC002A544D /* NotesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE22725020ECC002A544D /* NotesTableView.swift */; };
+		D6FFE22A25020EFE002A544D /* NotesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FFE22925020EFE002A544D /* NotesTableView.xib */; };
+		D6FFE22D250212E9002A544D /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE22B250212E9002A544D /* NoteCell.swift */; };
+		D6FFE22E250212E9002A544D /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FFE22C250212E9002A544D /* NoteCell.xib */; };
+		D6FFE23025021EC1002A544D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE22F25021EC1002A544D /* DateExtension.swift */; };
+		D6FFE232250225A3002A544D /* CreateAndEditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE231250225A3002A544D /* CreateAndEditNoteVC.swift */; };
+		D6FFE23425029472002A544D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE23325029472002A544D /* StringExtension.swift */; };
+		D6FFE23625029EFE002A544D /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE23525029EFE002A544D /* ArchiveVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D6CAB05E2501545500A0BBF4 /* VeeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CAB0612501545500A0BBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6CAB0632501545500A0BBF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D6CAB0652501545500A0BBF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6CAB0652501545500A0BBF4 /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		D6CAB0682501545500A0BBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6CAB06B2501545500A0BBF4 /* VeeProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VeeProject.xcdatamodel; sourceTree = "<group>"; };
 		D6CAB06D2501545700A0BBF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +39,15 @@
 		D6CAB0722501545700A0BBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6CAB07B250159D800A0BBF4 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
 		D6CAB07D25015D9300A0BBF4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		D6FFE22525020C1A002A544D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D6FFE22725020ECC002A544D /* NotesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableView.swift; sourceTree = "<group>"; };
+		D6FFE22925020EFE002A544D /* NotesTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableView.xib; sourceTree = "<group>"; };
+		D6FFE22B250212E9002A544D /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		D6FFE22C250212E9002A544D /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		D6FFE22F25021EC1002A544D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D6FFE231250225A3002A544D /* CreateAndEditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAndEditNoteVC.swift; sourceTree = "<group>"; };
+		D6FFE23325029472002A544D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D6FFE23525029EFE002A544D /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +95,9 @@
 		D6CAB0782501597600A0BBF4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D6CAB0652501545500A0BBF4 /* ViewController.swift */,
+				D6CAB0652501545500A0BBF4 /* NotesVC.swift */,
+				D6FFE23525029EFE002A544D /* ArchiveVC.swift */,
+				D6FFE231250225A3002A544D /* CreateAndEditNoteVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -87,6 +107,10 @@
 			children = (
 				D6CAB06F2501545700A0BBF4 /* LaunchScreen.storyboard */,
 				D6CAB0672501545500A0BBF4 /* Main.storyboard */,
+				D6FFE22725020ECC002A544D /* NotesTableView.swift */,
+				D6FFE22925020EFE002A544D /* NotesTableView.xib */,
+				D6FFE22B250212E9002A544D /* NoteCell.swift */,
+				D6FFE22C250212E9002A544D /* NoteCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +120,9 @@
 			children = (
 				D6CAB07B250159D800A0BBF4 /* DataManger.swift */,
 				D6CAB07D25015D9300A0BBF4 /* Note.swift */,
+				D6FFE22525020C1A002A544D /* Constants.swift */,
+				D6FFE22F25021EC1002A544D /* DateExtension.swift */,
+				D6FFE23325029472002A544D /* StringExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,9 +185,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6FFE22E250212E9002A544D /* NoteCell.xib in Resources */,
 				D6CAB0712501545700A0BBF4 /* LaunchScreen.storyboard in Resources */,
 				D6CAB06E2501545700A0BBF4 /* Assets.xcassets in Resources */,
 				D6CAB0692501545500A0BBF4 /* Main.storyboard in Resources */,
+				D6FFE22A25020EFE002A544D /* NotesTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,10 +200,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6CAB0662501545500A0BBF4 /* ViewController.swift in Sources */,
+				D6FFE232250225A3002A544D /* CreateAndEditNoteVC.swift in Sources */,
+				D6CAB0662501545500A0BBF4 /* NotesVC.swift in Sources */,
+				D6FFE23625029EFE002A544D /* ArchiveVC.swift in Sources */,
+				D6FFE23025021EC1002A544D /* DateExtension.swift in Sources */,
 				D6CAB0622501545500A0BBF4 /* AppDelegate.swift in Sources */,
 				D6CAB06C2501545500A0BBF4 /* VeeProject.xcdatamodeld in Sources */,
+				D6FFE22825020ECC002A544D /* NotesTableView.swift in Sources */,
 				D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */,
+				D6FFE22625020C1A002A544D /* Constants.swift in Sources */,
+				D6FFE23425029472002A544D /* StringExtension.swift in Sources */,
+				D6FFE22D250212E9002A544D /* NoteCell.swift in Sources */,
 				D6CAB0642501545500A0BBF4 /* SceneDelegate.swift in Sources */,
 				D6CAB07E25015D9300A0BBF4 /* Note.swift in Sources */,
 			);
