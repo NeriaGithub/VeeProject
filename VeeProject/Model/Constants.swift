@@ -9,16 +9,14 @@
 import Foundation
 
 struct Constants {
-    
+    // MARK: - CoreData Entity
     enum Entity:String {
         case notes = "Notes"
         case archive = "Archive"
     }
     
-    // attribute keys
+    // MARK: - CoreData attribute keys
     static let title = "title"
     static let content = "content"
-    static let date = "date"
-    static let dateFormat = "EEEE. dd.MM.yyyy HH:mm"
-    
+    static let date = "date"    
 }

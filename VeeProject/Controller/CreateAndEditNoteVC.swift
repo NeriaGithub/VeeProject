@@ -10,22 +10,27 @@ import UIKit
 
 class CreateAndEditNoteVC: UIViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var deleteButton: UIButton!
     
+    //MARK: - Properties
     var editNoteTuple:(note:Note?, index:Int?, entity:String) = (nil,nil,Constants.Entity.notes.rawValue)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if self.editNoteTuple.entity == Constants.Entity.archive.rawValue {
+        if self.editNoteTuple.entity == Constants.Entity.archive.rawValue  || self.editNoteTuple.index == nil{
             self.deleteButton.isHidden = true
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.endEditing(true)
     }
     
     func textViewConfig() {
@@ -68,17 +73,23 @@ class CreateAndEditNoteVC: UIViewController {
         return !self.noteTextField.text!.isEmpty && !self.noteTextView.text.isEmpty ? true : false
     }
     
-    func backToRootVC() {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+    func showAlert() {
+         let alert = UIAlertController(title: "You must fill in all the fields", message: nil, preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "Ok", style: .default))
+         self.present(alert, animated: true)
+     }
+    
     func backToPreviousVC()  {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func updateClick(_ sender: UIButton) {
+    //MARK: - IBActions
+    @IBAction func editClick(_ sender: UIButton) {
         if noteIsFull() {
             editNote()
-            backToRootVC()
+            backToPreviousVC()
+        }
+        else{
+            showAlert()
         }
     }
     
@@ -87,23 +98,13 @@ class CreateAndEditNoteVC: UIViewController {
             deleteNote()
            backToPreviousVC()
         }
+        else{
+            showAlert()
+        }
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.view.endEditing(true)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+//MARK: - UITextViewDelegate  method
 extension CreateAndEditNoteVC:UITextViewDelegate{
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {

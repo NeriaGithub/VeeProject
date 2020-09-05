@@ -14,12 +14,5 @@ struct Note {
     let date:Date
 }
 
-//extension Note:Comparable{
-//    static func < (lhs: Note, rhs: Note) -> Bool {
-//       return lhs.date < rhs.date
-//    }
-//    
-//    
-//}
 
 

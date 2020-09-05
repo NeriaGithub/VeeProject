@@ -9,7 +9,7 @@
 import UIKit
 
 class ArchiveVC: UIViewController {
-    
+    //MARK: - IBOutlet
     @IBOutlet weak var archiveView: NotesTableView!
     
     override func viewDidLoad() {
@@ -32,20 +32,9 @@ class ArchiveVC: UIViewController {
             VC.editNoteTuple.note = self.archiveView.notesArray[unwrappedIndexPath.row]
         }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
+//MARK: - NotesTableViewDelegate method
 extension ArchiveVC: NotesTableViewDelegate{
     func selectedRowCell(indexPath: IndexPath) {
         performSegue(withIdentifier: "archiveSegue", sender: self)

@@ -20,11 +20,12 @@ class DataManager{
     private init(){}
     
     private var context:NSManagedObjectContext?
-    
+
     func setContext(context:NSManagedObjectContext)   {
         self.context = context
     }
     
+    // MARK: - CRUD Methods
     func createNote(entity:String, note:Note) {
         let entity = NSEntityDescription.entity(forEntityName: entity, in: self.context!)
         let newNote = NSManagedObject(entity: entity!, insertInto: self.context)
@@ -48,7 +49,6 @@ class DataManager{
                 let date = item.value(forKey: Constants.date) as! Date
                 notes.append(Note(title: title, content: content, date: date))
             }
-          notes =  notes.sorted(by: { $0.date > $1.date })
         }
         catch  {}
         return notes

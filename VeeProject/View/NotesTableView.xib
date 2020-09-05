@@ -19,16 +19,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I63-Jd-AgH">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="549"/>
+                    <rect key="frame" x="16" y="0.0" width="382" height="549"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="I63-Jd-AgH" secondAttribute="bottom" id="50k-IR-zCl"/>
                 <constraint firstItem="I63-Jd-AgH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8pD-Vc-U5S"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I63-Jd-AgH" secondAttribute="trailing" id="JDy-zl-ZiC"/>
-                <constraint firstItem="I63-Jd-AgH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uo5-4a-i0h"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I63-Jd-AgH" secondAttribute="trailing" constant="16" id="JDy-zl-ZiC"/>
+                <constraint firstItem="I63-Jd-AgH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="uo5-4a-i0h"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -9,9 +9,10 @@
 import UIKit
 
 class NotesVC: UIViewController {
-
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var notesView: NotesTableView!
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -28,8 +29,8 @@ class NotesVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue" {
+            let VC = segue.destination as! CreateAndEditNoteVC
             if let unwrappedIndexPath = self.notesView.table.indexPathForSelectedRow {
-                let VC = segue.destination as! CreateAndEditNoteVC
                 VC.editNoteTuple.entity = Constants.Entity.notes.rawValue
                 VC.editNoteTuple.index = unwrappedIndexPath.row
                 VC.editNoteTuple.note = self.notesView.notesArray[unwrappedIndexPath.row]
@@ -37,7 +38,7 @@ class NotesVC: UIViewController {
         }
     }
 }
-
+    // MARK: - NotesTableViewDelegate method
 extension NotesVC:NotesTableViewDelegate{
     func selectedRowCell(indexPath: IndexPath) {
         self.performSegue(withIdentifier: "editSegue", sender: self)

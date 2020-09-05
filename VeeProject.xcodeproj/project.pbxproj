@@ -23,7 +23,6 @@
 		D6FFE22E250212E9002A544D /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FFE22C250212E9002A544D /* NoteCell.xib */; };
 		D6FFE23025021EC1002A544D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE22F25021EC1002A544D /* DateExtension.swift */; };
 		D6FFE232250225A3002A544D /* CreateAndEditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE231250225A3002A544D /* CreateAndEditNoteVC.swift */; };
-		D6FFE23425029472002A544D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE23325029472002A544D /* StringExtension.swift */; };
 		D6FFE23625029EFE002A544D /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE23525029EFE002A544D /* ArchiveVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		D6FFE22C250212E9002A544D /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		D6FFE22F25021EC1002A544D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		D6FFE231250225A3002A544D /* CreateAndEditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAndEditNoteVC.swift; sourceTree = "<group>"; };
-		D6FFE23325029472002A544D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D6FFE23525029EFE002A544D /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +120,6 @@
 				D6CAB07D25015D9300A0BBF4 /* Note.swift */,
 				D6FFE22525020C1A002A544D /* Constants.swift */,
 				D6FFE22F25021EC1002A544D /* DateExtension.swift */,
-				D6FFE23325029472002A544D /* StringExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,7 +206,6 @@
 				D6FFE22825020ECC002A544D /* NotesTableView.swift in Sources */,
 				D6CAB07C250159D800A0BBF4 /* DataManger.swift in Sources */,
 				D6FFE22625020C1A002A544D /* Constants.swift in Sources */,
-				D6FFE23425029472002A544D /* StringExtension.swift in Sources */,
 				D6FFE22D250212E9002A544D /* NoteCell.swift in Sources */,
 				D6CAB0642501545500A0BBF4 /* SceneDelegate.swift in Sources */,
 				D6CAB07E25015D9300A0BBF4 /* Note.swift in Sources */,

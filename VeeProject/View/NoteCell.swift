@@ -10,6 +10,7 @@ import UIKit
 
 class NoteCell: UITableViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
@@ -19,16 +20,10 @@ class NoteCell: UITableViewCell {
         // Initialization code
     }
     
+    // MARK: - Cell set method
     func setNoteCell(note:Note) {
         self.titleLabel.text = note.title
         self.contentLabel.text = note.content
         self.dateLabel.text = note.date.getDateString()
-        
     }
-    
-    
-    
-
-    
-    
 }
