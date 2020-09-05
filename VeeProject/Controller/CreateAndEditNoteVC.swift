@@ -20,22 +20,18 @@ class CreateAndEditNoteVC: UIViewController {
     
     //MARK: - Properties
     var editNoteTuple:(note:Note?, index:Int?, entity:String) = (nil,nil,Constants.Entity.notes.rawValue)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      setViews()
+        self.noteTextView.delegate = self
+        setViews()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.view.endEditing(true)
     }
     
-    func textViewConfig() {
-        self.noteTextView.delegate = self
-    }
-    
     func setViews()  {
-        textViewConfig()
         if let _ = self.editNoteTuple.index, let note = self.editNoteTuple.note {
             self.noteTextField.text = note.title
             self.noteTextView.text = note.content
@@ -50,11 +46,11 @@ class CreateAndEditNoteVC: UIViewController {
             self.clickToEdit.isHidden = true
         }
     }
-
+    
     func hideOrShowViews(isEditMode:Bool) {
-            self.contentLabel.isHidden = isEditMode
-            self.noteTextView.isHidden = !isEditMode
-            self.noteTextField.isHidden = !isEditMode
+        self.contentLabel.isHidden = isEditMode
+        self.noteTextView.isHidden = !isEditMode
+        self.noteTextField.isHidden = !isEditMode
         self.clickToEdit.isHidden = isEditMode
     }
     
@@ -79,8 +75,8 @@ class CreateAndEditNoteVC: UIViewController {
     
     func deleteNote() {
         guard let unwrappedIndex = self.editNoteTuple.index else { return}
-            DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: unwrappedIndex)
-            DataManager.getSharedInstance().createNote(entity: Constants.Entity.archive.rawValue, note: self.editNoteTuple.note!)
+        DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: unwrappedIndex)
+        DataManager.getSharedInstance().createNote(entity: Constants.Entity.archive.rawValue, note: self.editNoteTuple.note!)
     }
     
     func noteIsFull() -> Bool {
@@ -88,10 +84,10 @@ class CreateAndEditNoteVC: UIViewController {
     }
     
     func showAlert() {
-         let alert = UIAlertController(title: "You must fill in all the fields", message: nil, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: "Ok", style: .default))
-         self.present(alert, animated: true)
-     }
+        let alert = UIAlertController(title: "You must fill in all the fields", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true)
+    }
     
     func backToPreviousVC()  {
         self.navigationController?.popViewController(animated: true)
@@ -100,8 +96,9 @@ class CreateAndEditNoteVC: UIViewController {
     @IBAction func doneClick(_ sender: UIButton) {
         if noteIsFull() {
             editNote()
+            sender.isEnabled = false
             hideOrShowViews(isEditMode: false)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.backToPreviousVC()
             }
         }
@@ -113,7 +110,7 @@ class CreateAndEditNoteVC: UIViewController {
     @IBAction func deleteClick(_ sender: UIButton) {
         if noteIsFull() {
             deleteNote()
-           backToPreviousVC()
+            backToPreviousVC()
         }
         else{
             showAlert()
