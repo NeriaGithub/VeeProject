@@ -46,6 +46,7 @@ class NotesTableView: UIView {
         self.table.delegate = self
         self.table.rowHeight = UITableView.automaticDimension
         self.table.estimatedRowHeight = 70
+        self.table.tableFooterView = UIView(frame: .zero)
         let nib = UINib(nibName: "NoteCell", bundle: nil)
         self.table.register(nib, forCellReuseIdentifier: "noteCell")
     }
