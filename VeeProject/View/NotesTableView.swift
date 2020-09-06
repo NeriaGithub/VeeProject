@@ -49,21 +49,19 @@ class NotesTableView: UIView {
         let nib = UINib(nibName: "NoteCell", bundle: nil)
         self.table.register(nib, forCellReuseIdentifier: "noteCell")
     }
-  // MARK: - UIContextualAction Methods
+    // MARK: - UIContextualAction Methods
     private func makeDeleteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         return UIContextualAction(style: .destructive, title: "Delete") { (action, swipeButtonView, completion) in
             self.notesArray.remove(at: indexPath.row)
             self.table.deleteRows(at: [indexPath], with: .fade)
             DataManager.getSharedInstance().deleteNote(entity: self.entity, index: indexPath.row)
-            print("Delete action")
             completion(true)
         }
     }
-
+    
     // MARK: - UIContextualAction methods
     private func makeRecoverContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         let recoverAction =  UIContextualAction(style: .normal, title: "Recover") { (action, swipeButtonView, completion) in
-            print("Recover action")
             let recoverNote = self.notesArray.remove(at: indexPath.row)
             DataManager.getSharedInstance().deleteNote(entity: self.entity, index: indexPath.row)
             DataManager.getSharedInstance().createNote(entity: Constants.Entity.notes.rawValue, note: recoverNote)

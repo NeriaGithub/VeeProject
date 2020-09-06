@@ -20,7 +20,7 @@ class DataManager{
     private init(){}
     
     private var context:NSManagedObjectContext?
-
+    
     func setContext(context:NSManagedObjectContext)   {
         self.context = context
     }

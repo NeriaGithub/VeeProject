@@ -9,7 +9,7 @@
 import UIKit
 
 class NoteCell: UITableViewCell {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

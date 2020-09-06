@@ -24,29 +24,44 @@ class CreateAndEditNoteVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noteTextView.delegate = self
-        setViews()
+        viewsConfig()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.view.endEditing(true)
     }
     
-    func setViews()  {
-        if let _ = self.editNoteTuple.index, let note = self.editNoteTuple.note {
-            self.noteTextField.text = note.title
-            self.noteTextView.text = note.content
-            self.titleLabel.text = note.title
-            self.contentLabel.text = note.content
+    func viewsConfig()  {
+        guard let _ = self.editNoteTuple.index, let unwrappedNote = self.editNoteTuple.note
+            else{
+                hideOrShowViews(isEditMode: true)
+                self.clickToEdit.isHidden = true
+                self.deleteButton.isHidden = true
+                return
         }
+        self.noteTextField.text = unwrappedNote.title
+        self.noteTextView.text = unwrappedNote.content
+        self.titleLabel.text = unwrappedNote.title
+        self.contentLabel.text = unwrappedNote.content
+        
         if self.editNoteTuple.entity == Constants.Entity.archive.rawValue{
             self.deleteButton.isHidden = true
         }
-        else if self.editNoteTuple.index == nil {
-            hideOrShowViews(isEditMode: true)
-            self.clickToEdit.isHidden = true
-        }
+        
+        //        if let _ = self.editNoteTuple.index, let note = self.editNoteTuple.note {
+        //            self.noteTextField.text = note.title
+        //            self.noteTextView.text = note.content
+        //            self.titleLabel.text = note.title
+        //            self.contentLabel.text = note.content
+        //        }
+        //        if self.editNoteTuple.entity == Constants.Entity.archive.rawValue{
+        //            self.deleteButton.isHidden = true
+        //        }
+        //        else if self.editNoteTuple.index == nil {
+        //            hideOrShowViews(isEditMode: true)
+        //            self.clickToEdit.isHidden = true
+        //        }
     }
-    
     func hideOrShowViews(isEditMode:Bool) {
         self.contentLabel.isHidden = isEditMode
         self.noteTextView.isHidden = !isEditMode
@@ -57,26 +72,42 @@ class CreateAndEditNoteVC: UIViewController {
     func editNote()  {
         let date = Date()
         self.editNoteTuple.note = Note(title: self.noteTextField.text!, content: self.noteTextView.text, date: date)
-        if self.editNoteTuple.entity == Constants.Entity.notes.rawValue {
-            if let unwrappedIndex = self.editNoteTuple.index {
-                DataManager.getSharedInstance().updateNote(entity: self.editNoteTuple.entity, index: unwrappedIndex, note: self.editNoteTuple.note!)
-            }
-            else{
+        self.titleLabel.text = self.noteTextField.text!
+        self.contentLabel.text = self.noteTextView.text
+        guard let unwrappedIndex = self.editNoteTuple.index
+            else {
                 DataManager.getSharedInstance().createNote(entity: self.editNoteTuple.entity, note: self.editNoteTuple.note!)
-            }
+                return
+        }
+        if self.editNoteTuple.entity == Constants.Entity.notes.rawValue {
+            DataManager.getSharedInstance().updateNote(entity: self.editNoteTuple.entity, index: unwrappedIndex, note: self.editNoteTuple.note!)
         }
         else {
             DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: self.editNoteTuple.index!)
             DataManager.getSharedInstance().createNote(entity: Constants.Entity.notes.rawValue, note: self.editNoteTuple.note!)
         }
-        self.titleLabel.text = self.noteTextField.text!
-        self.contentLabel.text = self.noteTextView.text
+        
+        
+        //        if self.editNoteTuple.entity == Constants.Entity.notes.rawValue {
+        //            if let unwrappedIndex = self.editNoteTuple.index {
+        //                DataManager.getSharedInstance().updateNote(entity: self.editNoteTuple.entity, index: unwrappedIndex, note: self.editNoteTuple.note!)
+        //            }
+        //            else{
+        //                DataManager.getSharedInstance().createNote(entity: self.editNoteTuple.entity, note: self.editNoteTuple.note!)
+        //            }
+        //        }
+        //        else {
+        //            DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: self.editNoteTuple.index!)
+        //            DataManager.getSharedInstance().createNote(entity: Constants.Entity.notes.rawValue, note: self.editNoteTuple.note!)
+        //        }
+        //        self.titleLabel.text = self.noteTextField.text!
+        //        self.contentLabel.text = self.noteTextView.text
     }
     
     func deleteNote() {
-        guard let unwrappedIndex = self.editNoteTuple.index else { return}
+        guard let unwrappedIndex = self.editNoteTuple.index, let unwrappedNote = self.editNoteTuple.note  else { return}
         DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: unwrappedIndex)
-        DataManager.getSharedInstance().createNote(entity: Constants.Entity.archive.rawValue, note: self.editNoteTuple.note!)
+        DataManager.getSharedInstance().createNote(entity: Constants.Entity.archive.rawValue, note: unwrappedNote)
     }
     
     func noteIsFull() -> Bool {
@@ -98,7 +129,7 @@ class CreateAndEditNoteVC: UIViewController {
             editNote()
             sender.isEnabled = false
             hideOrShowViews(isEditMode: false)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.backToPreviousVC()
             }
         }

@@ -38,12 +38,10 @@ class NotesVC: UIViewController {
         }
     }
 }
-    // MARK: - NotesTableViewDelegate method
+// MARK: - NotesTableViewDelegate method
 extension NotesVC:NotesTableViewDelegate{
     func selectedRowCell(indexPath: IndexPath) {
         self.performSegue(withIdentifier: "editSegue", sender: self)
     }
-    
-    
 }
 
