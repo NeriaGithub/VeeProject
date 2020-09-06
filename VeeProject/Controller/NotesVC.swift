@@ -38,6 +38,7 @@ class NotesVC: UIViewController {
         }
     }
 }
+
 // MARK: - NotesTableViewDelegate method
 extension NotesVC:NotesTableViewDelegate{
     func selectedRowCell(indexPath: IndexPath) {

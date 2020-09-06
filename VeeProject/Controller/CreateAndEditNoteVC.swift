@@ -46,7 +46,6 @@ class CreateAndEditNoteVC: UIViewController {
         if self.editNoteTuple.entity == Constants.Entity.archive.rawValue{
             self.deleteButton.isHidden = true
         }
-        
     }
     func hideOrShowViews(isEditMode:Bool) {
         self.contentLabel.isHidden = isEditMode

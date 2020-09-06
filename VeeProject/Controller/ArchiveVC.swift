@@ -16,7 +16,6 @@ class ArchiveVC: UIViewController {
         super.viewDidLoad()
         self.archiveView.notesTableViewDelegate = self
         self.archiveView.entity = Constants.Entity.archive.rawValue
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,6 +38,4 @@ extension ArchiveVC: NotesTableViewDelegate{
     func selectedRowCell(indexPath: IndexPath) {
         performSegue(withIdentifier: "archiveSegue", sender: self)
     }
-    
-    
 }
