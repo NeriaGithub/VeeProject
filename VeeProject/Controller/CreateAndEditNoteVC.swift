@@ -35,8 +35,7 @@ class CreateAndEditNoteVC: UIViewController {
         guard let _ = self.editNoteTuple.index, let unwrappedNote = self.editNoteTuple.note
             else{
                 hideOrShowViews(isEditMode: true)
-                self.clickToEdit.isHidden = true
-                self.deleteButton.isHidden = true
+                self.deleteButton.isEnabled = false
                 return
         }
         self.noteTextField.text = unwrappedNote.title
