@@ -60,7 +60,6 @@ class NotesTableView: UIView {
         }
     }
     
-    // MARK: - UIContextualAction methods
     private func makeRecoverContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         let recoverAction =  UIContextualAction(style: .normal, title: "Recover") { (action, swipeButtonView, completion) in
             let recoverNote = self.notesArray.remove(at: indexPath.row)

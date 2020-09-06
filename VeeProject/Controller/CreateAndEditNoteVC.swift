@@ -47,19 +47,6 @@ class CreateAndEditNoteVC: UIViewController {
             self.deleteButton.isHidden = true
         }
         
-        //        if let _ = self.editNoteTuple.index, let note = self.editNoteTuple.note {
-        //            self.noteTextField.text = note.title
-        //            self.noteTextView.text = note.content
-        //            self.titleLabel.text = note.title
-        //            self.contentLabel.text = note.content
-        //        }
-        //        if self.editNoteTuple.entity == Constants.Entity.archive.rawValue{
-        //            self.deleteButton.isHidden = true
-        //        }
-        //        else if self.editNoteTuple.index == nil {
-        //            hideOrShowViews(isEditMode: true)
-        //            self.clickToEdit.isHidden = true
-        //        }
     }
     func hideOrShowViews(isEditMode:Bool) {
         self.contentLabel.isHidden = isEditMode
@@ -85,22 +72,6 @@ class CreateAndEditNoteVC: UIViewController {
             DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: unwrappedIndex)
             DataManager.getSharedInstance().createNote(entity: Constants.Entity.notes.rawValue, note: self.editNoteTuple.note!)
         }
-        
-        
-        //        if self.editNoteTuple.entity == Constants.Entity.notes.rawValue {
-        //            if let unwrappedIndex = self.editNoteTuple.index {
-        //                DataManager.getSharedInstance().updateNote(entity: self.editNoteTuple.entity, index: unwrappedIndex, note: self.editNoteTuple.note!)
-        //            }
-        //            else{
-        //                DataManager.getSharedInstance().createNote(entity: self.editNoteTuple.entity, note: self.editNoteTuple.note!)
-        //            }
-        //        }
-        //        else {
-        //            DataManager.getSharedInstance().deleteNote(entity: self.editNoteTuple.entity, index: self.editNoteTuple.index!)
-        //            DataManager.getSharedInstance().createNote(entity: Constants.Entity.notes.rawValue, note: self.editNoteTuple.note!)
-        //        }
-        //        self.titleLabel.text = self.noteTextField.text!
-        //        self.contentLabel.text = self.noteTextView.text
     }
     
     func deleteNote() {
